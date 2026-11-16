@@ -25,7 +25,7 @@ h1,h2,h3{letter-spacing:-0.025em}
 @st.cache_data(show_spinner=False)
 def load_default():
     return pd.read_csv(
-        Path(_file_).parent / "Customer_mall.csv"
+        Path(__file__).resolve().parent / "data" / "Customer_mall.csv"
     )
 
 @st.cache_data(show_spinner=False)
