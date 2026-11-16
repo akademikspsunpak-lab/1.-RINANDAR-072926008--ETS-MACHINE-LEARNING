@@ -24,27 +24,9 @@ h1,h2,h3{letter-spacing:-0.025em}
 
 @st.cache_data(show_spinner=False)
 def load_default():
-    
-from pathlib import Path
-import pandas as pd
-import streamlit as st
-
-def load_default():
-    data_path = (
-        Path(__file__).resolve().parent
-        / "data"
-        / "Customer_mall.csv"
-    )
-
-    if not data_path.is_file():
-        st.warning(
-            "Dataset bawaan tidak ditemukan. "
-            "Silakan upload file CSV melalui Control Center."
-        )
-        st.stop()
-
-    return pd.read_csv(data_path)
-
+return pd.read_csv(
+    Path(_file_).parent / "Customer_mall.csv"
+)
 
 @st.cache_data(show_spinner=False)
 def load_uploaded(raw):
